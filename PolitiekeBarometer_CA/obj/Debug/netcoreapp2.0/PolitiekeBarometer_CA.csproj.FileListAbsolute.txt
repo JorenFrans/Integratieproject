@@ -1,0 +1,17 @@
+C:\Users\Samcl\OneDrive\Documenten\POF-Integratieproject-1\POF-Integratieproject\PolitiekeBarometer_CA\obj\Debug\netcoreapp2.0\PolitiekeBarometer_CA.csprojResolveAssemblyReference.cache
+C:\Users\Samcl\OneDrive\Documenten\POF-Integratieproject-1\POF-Integratieproject\PolitiekeBarometer_CA\obj\Debug\netcoreapp2.0\PolitiekeBarometer_CA.csproj.CoreCompileInputs.cache
+C:\Users\Samcl\OneDrive\Documenten\POF-Integratieproject-1\POF-Integratieproject\PolitiekeBarometer_CA\obj\Debug\netcoreapp2.0\PolitiekeBarometer_CA.AssemblyInfoInputs.cache
+C:\Users\Samcl\OneDrive\Documenten\POF-Integratieproject-1\POF-Integratieproject\PolitiekeBarometer_CA\obj\Debug\netcoreapp2.0\PolitiekeBarometer_CA.AssemblyInfo.cs
+C:\Users\Samcl\OneDrive\Documenten\POF-Integratieproject-1\POF-Integratieproject\PolitiekeBarometer_CA\bin\Debug\netcoreapp2.0\PolitiekeBarometer_CA.deps.json
+C:\Users\Samcl\OneDrive\Documenten\POF-Integratieproject-1\POF-Integratieproject\PolitiekeBarometer_CA\bin\Debug\netcoreapp2.0\PolitiekeBarometer_CA.runtimeconfig.json
+C:\Users\Samcl\OneDrive\Documenten\POF-Integratieproject-1\POF-Integratieproject\PolitiekeBarometer_CA\bin\Debug\netcoreapp2.0\PolitiekeBarometer_CA.runtimeconfig.dev.json
+C:\Users\Samcl\OneDrive\Documenten\POF-Integratieproject-1\POF-Integratieproject\PolitiekeBarometer_CA\bin\Debug\netcoreapp2.0\PolitiekeBarometer_CA.dll
+C:\Users\Samcl\OneDrive\Documenten\POF-Integratieproject-1\POF-Integratieproject\PolitiekeBarometer_CA\bin\Debug\netcoreapp2.0\PolitiekeBarometer_CA.pdb
+C:\Users\Samcl\OneDrive\Documenten\POF-Integratieproject-1\POF-Integratieproject\PolitiekeBarometer_CA\bin\Debug\netcoreapp2.0\BL.dll
+C:\Users\Samcl\OneDrive\Documenten\POF-Integratieproject-1\POF-Integratieproject\PolitiekeBarometer_CA\bin\Debug\netcoreapp2.0\DAL.dll
+C:\Users\Samcl\OneDrive\Documenten\POF-Integratieproject-1\POF-Integratieproject\PolitiekeBarometer_CA\bin\Debug\netcoreapp2.0\Domain.dll
+C:\Users\Samcl\OneDrive\Documenten\POF-Integratieproject-1\POF-Integratieproject\PolitiekeBarometer_CA\bin\Debug\netcoreapp2.0\BL.pdb
+C:\Users\Samcl\OneDrive\Documenten\POF-Integratieproject-1\POF-Integratieproject\PolitiekeBarometer_CA\bin\Debug\netcoreapp2.0\DAL.pdb
+C:\Users\Samcl\OneDrive\Documenten\POF-Integratieproject-1\POF-Integratieproject\PolitiekeBarometer_CA\bin\Debug\netcoreapp2.0\Domain.pdb
+C:\Users\Samcl\OneDrive\Documenten\POF-Integratieproject-1\POF-Integratieproject\PolitiekeBarometer_CA\obj\Debug\netcoreapp2.0\PolitiekeBarometer_CA.dll
+C:\Users\Samcl\OneDrive\Documenten\POF-Integratieproject-1\POF-Integratieproject\PolitiekeBarometer_CA\obj\Debug\netcoreapp2.0\PolitiekeBarometer_CA.pdb
