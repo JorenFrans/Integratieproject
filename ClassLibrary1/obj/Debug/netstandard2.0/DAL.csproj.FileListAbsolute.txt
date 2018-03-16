@@ -1,0 +1,11 @@
+C:\Users\Samcl\OneDrive\Documenten\POF-Integratieproject-1\POF-Integratieproject\ClassLibrary1\obj\Debug\netstandard2.0\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Samcl\OneDrive\Documenten\POF-Integratieproject-1\POF-Integratieproject\ClassLibrary1\obj\Debug\netstandard2.0\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Samcl\OneDrive\Documenten\POF-Integratieproject-1\POF-Integratieproject\ClassLibrary1\obj\Debug\netstandard2.0\DAL.AssemblyInfoInputs.cache
+C:\Users\Samcl\OneDrive\Documenten\POF-Integratieproject-1\POF-Integratieproject\ClassLibrary1\obj\Debug\netstandard2.0\DAL.AssemblyInfo.cs
+C:\Users\Samcl\OneDrive\Documenten\POF-Integratieproject-1\POF-Integratieproject\ClassLibrary1\bin\Debug\netstandard2.0\DAL.deps.json
+C:\Users\Samcl\OneDrive\Documenten\POF-Integratieproject-1\POF-Integratieproject\ClassLibrary1\bin\Debug\netstandard2.0\DAL.dll
+C:\Users\Samcl\OneDrive\Documenten\POF-Integratieproject-1\POF-Integratieproject\ClassLibrary1\bin\Debug\netstandard2.0\DAL.pdb
+C:\Users\Samcl\OneDrive\Documenten\POF-Integratieproject-1\POF-Integratieproject\ClassLibrary1\bin\Debug\netstandard2.0\Domain.dll
+C:\Users\Samcl\OneDrive\Documenten\POF-Integratieproject-1\POF-Integratieproject\ClassLibrary1\bin\Debug\netstandard2.0\Domain.pdb
+C:\Users\Samcl\OneDrive\Documenten\POF-Integratieproject-1\POF-Integratieproject\ClassLibrary1\obj\Debug\netstandard2.0\DAL.dll
+C:\Users\Samcl\OneDrive\Documenten\POF-Integratieproject-1\POF-Integratieproject\ClassLibrary1\obj\Debug\netstandard2.0\DAL.pdb

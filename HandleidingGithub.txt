@@ -1,0 +1,20 @@
+Stappenplan:
+>Ga naar www.gitlab.com
+>Registreer
+>Stuur je gebruikersnaam naar Joren en vraag hem om u toe te voegen
+>Ga naar https://git-scm.com/downloads
+>Download git en verander niets aan de instellingen (Je mag wel de locatie wijzigen)
+>Wanneer Joren heeft bevestigd dat je bent toegevoegd op gitlab, check je je email om de uitnodiging te aanvaarden
+>Open git bash
+>Ga naar de bestandslocatie waar je het project telkens wilt opslaan
+>Voer in: $ git init
+>voer in: $ git add .
+>Voer in: $ git config --global user.email "jouwemailadresvangithub"
+>Voer in: $ git config --global user.name "jouwgebruikersnaamvangithub"
+>Voer in: $ git commit -m "First commit jouwnaam"
+>Voer in: $ git remote add origin https://gitlab.com/JorenFrans/IntegratieProjectTeam20.git
+>Voer in: $ git remote -v
+>Voer in: $ git pull --rebase origin master
+>Voer in: $ git push origin master
+>Voer je gegevens van gitlab in
+>Voer in: $ git branch --set-upstream-to=origin/master master
