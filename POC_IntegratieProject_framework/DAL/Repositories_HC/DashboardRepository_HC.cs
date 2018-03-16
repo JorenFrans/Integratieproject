@@ -112,10 +112,10 @@ namespace DAL.Repositories_HC
                 ApplicatieMelding = false,
                 BrowserMelding = false,
                 EmailMelding = true,
-                Waarde = 100,
-                Operator = "<",
+                Waarde = -4,
+                Operator = ">",
                 Status = AlertStatus.ACTIEF,
-                DataConfig = dataConfigs.Find(dc => dc.DataConfiguratieId == 0),
+                DataConfig = dataConfigs.Find(dc => dc.DataConfiguratieId == 3),
                 Dashboard = new Dashboard
                 {
                     DashboardId = 2,
@@ -188,6 +188,18 @@ namespace DAL.Repositories_HC
                 }
             };
             dataConfigs.Add(dataConfig3);
+
+            DataConfig dataConfig4 = new DataConfig
+            {
+                DataConfiguratieId = dataConfigs.Count,
+                DataType = DataType.TREND,
+                Element = new Persoon()
+                {
+                    Naam = "Imade Annouri"
+                }
+            };
+            dataConfigs.Add(dataConfig4);
+
         }
 
         public List<Alert> getAllAlerts()
