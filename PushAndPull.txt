@@ -1,8 +1,0 @@
-pullen: 
-Ga naar de juiste directory
->git pull
-
-pushen: 
->git add .
->git commit -m "message"
->git push origin AlertVersturen
