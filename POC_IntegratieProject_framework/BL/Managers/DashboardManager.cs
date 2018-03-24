@@ -1,6 +1,6 @@
 ﻿using BL.Interfaces;
 using DAL;
-using DAL.Repositories_HC;
+using DAL.Repositories;
 using Domain;
 using Domain.Platformen;
 using System;
@@ -14,7 +14,7 @@ namespace BL.Managers
         IDashboardRepository dashboardRepository;
         public DashboardManager()
         {
-            dashboardRepository = new DashboardRepository_HC();
+            dashboardRepository = new DashboardRepository_EF();
         }
 
         public List<Alert> getActiveAlerts()

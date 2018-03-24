@@ -1,6 +1,6 @@
 ﻿using BL.Interfaces;
 using DAL;
-using DAL.Repositories_HC;
+using DAL.Repositories;
 using Domain;
 using System;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ namespace BL.Managers
 {
     public class ElementManager : IElementManager
     {
-        IElementRepository elementRepository = new ElementRepository_HC();
+        IElementRepository elementRepository = new  ElementRepository_EF();
 
         public List<Element> getAllElementen()
         {

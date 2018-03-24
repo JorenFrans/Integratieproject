@@ -1,5 +1,6 @@
 ﻿using BL.Interfaces;
 using DAL;
+using DAL.Repositories;
 using DAL.Repositories_HC;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ namespace BL.Managers
 
         public PlatformManager()
         {
-            platformRepository = new PlatformRepository_HC();
+            platformRepository = new PlatformRepository_EF();
         }
     }
 }

@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Numerics;
 using MathNet.Numerics.Interpolation;
+using DAL.Repositories;
 
 namespace BL.Managers
 {
@@ -17,7 +18,7 @@ namespace BL.Managers
 
         public PostManager()
         {
-            this.postRepository = new PostRepository_HC();
+            this.postRepository = new PostRepository_EF();
         }
 
         public void addPosts(List<Post> list)
