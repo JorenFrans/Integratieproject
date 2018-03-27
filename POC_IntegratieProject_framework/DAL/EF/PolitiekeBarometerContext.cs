@@ -1,5 +1,7 @@
 ﻿using Domain;
+using Domain.Dashboards;
 using Domain.Elementen;
+using Domain.Platformen;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -14,14 +16,23 @@ namespace DAL.EF
         private readonly bool delaySave;
         public PolitiekeBarometerContext(bool unitOfWorkPresent = false) : base("Politieke_BarometerDB")
         {
-            Database.SetInitializer<PolitiekeBarometerContext>(new PolitiekeBarometerInitializer());
             delaySave = unitOfWorkPresent;
-
+            Database.SetInitializer<PolitiekeBarometerContext>(new PolitiekeBarometerInitializer());
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Thema>().HasMany<Keyword>(kw => kw.Keywords);
+            modelBuilder.Entity<Keyword>().HasMany<Thema>(t => t.Themas);
+
+            modelBuilder.Entity<Post>().HasMany<Keyword>(kw => kw.Keywords);
+            modelBuilder.Entity<Keyword>().HasMany<Post>(t => t.Posts);
+
+            modelBuilder.Entity<Organisatie>().HasMany<Persoon>(p => p.Personen);
+
+            modelBuilder.Entity<Alert>().HasRequired<DataConfig>(a => a.DataConfig);
+
 
             //Relaties
 
@@ -35,10 +46,11 @@ namespace DAL.EF
         //Elementen
         public DbSet<Element> Elementen { get; set; }
         public DbSet<Keyword> Keywords { get; set; }
-
-        //Platformen
         public DbSet<Persoon> Personen { get; set; }
         public DbSet<Thema> Themas { get; set; }
+        //Platformen
+        public DbSet<Dashboard> Dashboards { get; set; }
+        public DbSet<Gebruiker> Gebruikers { get; set; }
 
         //Posts
         public DbSet<Post> Posts { get; set; }

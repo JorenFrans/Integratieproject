@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity;
 using System.Text;
 using System.Threading.Tasks;
 using DAL.EF;
@@ -24,7 +25,7 @@ namespace DAL.Repositories_EF
 
         public IEnumerable<Alert> getAllAlerts()
         {
-            return  context.Alerts.ToList<Alert>();
+            return  context.Alerts.Include(a => a.DataConfig).ToList();
         }
 
         public IEnumerable<Alert> getActiveAlerts()
