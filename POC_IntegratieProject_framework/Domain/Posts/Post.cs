@@ -1,4 +1,4 @@
-﻿using Domain.Posts;
+﻿using Domain.Elementen;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -14,10 +14,9 @@ namespace Domain
         [Key]
         public long PostId { get; set; }
 
-        [Required]
         public Persoon Persoon { get; set; }
 
-        public List<PostKeyword> Keywords { get; set; }
+        public List<Keyword> Keywords { get; set; }
 
         public List<Parameter> Parameters { get; set; }
 

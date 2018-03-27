@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DAL.Repositories_HC
+namespace DAL
 {
     public class TweetDump
     {

@@ -1,12 +1,13 @@
 ﻿using BL.Interfaces;
 using BL.Managers;
+using DAL;
 using DAL.Repositories_HC;
 using Domain;
 using Domain.Elementen;
 using Domain.Platformen;
-using Domain.Posts;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace PolitiekeBarometer_CA
 {
@@ -95,11 +96,11 @@ namespace PolitiekeBarometer_CA
                 {
                     Console.WriteLine("Keywords: ");
                     Thema thema = (Thema)element;
-                    foreach (ThemaKeyword word in thema.Keywords)
+                    foreach (Keyword word in thema.Keywords)
                     {
                         if (word != null)
                         {
-                            Console.WriteLine(word.Keyword);
+                            Console.WriteLine(word.KeywordNaam);
 
                         }
                     }
@@ -131,7 +132,7 @@ namespace PolitiekeBarometer_CA
 
             bool melding = false;
             //Posts updaten
-            List<Tweet> tweets = postManager.updatePosts();
+            List<Tweet> tweets = postManager.updatePosts().ToList();
 
             //TODO: Verderparsen en toevoegen
             List<Post> postsToAdd = new List<Post>();
@@ -144,8 +145,7 @@ namespace PolitiekeBarometer_CA
             {
                 DataConfig dataConfig = dashboardManager.getAlertDataConfig(alert);
                 Element configElement = elementManager.getElementByNaam(dataConfig.Element.Naam);
-                double waarde = postManager.getHuidigeWaarde(dataConfig,
-                    configElement);
+                double waarde = postManager.getHuidigeWaarde(dataConfig);
 
                 switch (alert.Operator)
                 {
@@ -207,14 +207,13 @@ namespace PolitiekeBarometer_CA
             {
                 Post post = new Post();
                 post.PostId = tweet.TweetId;
-                post.Keywords = new List<PostKeyword>();
+                post.Keywords = new List<Keyword>();
                 foreach (string word in tweet.Words)
                 {
-                    post.Keywords.Add(new PostKeyword()
+                    post.Keywords.Add(new Keyword()
                     {
-                        Post = post,
-                        PostKeywordId = index,
-                        word = word
+                        KeywordId = index,
+                        KeywordNaam = word
                     });
                     index++;
                 }

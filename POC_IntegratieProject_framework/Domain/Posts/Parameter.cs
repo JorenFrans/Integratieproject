@@ -14,12 +14,10 @@ namespace Domain
 
         public String Naam { get; set; }
 
-        [Required]
         public ParameterType ParameterType { get; set; }
 
         public List<Waarde> Waarden { get; set; }
 
-        [Required]
         public Post Post { get; set; }
     }
 }

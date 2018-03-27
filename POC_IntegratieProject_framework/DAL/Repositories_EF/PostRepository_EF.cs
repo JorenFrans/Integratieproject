@@ -1,27 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DAL.Repositories_EF;
+using DAL.EF;
 using DAL.Repositories_HC;
 using Domain;
+using Domain.Elementen;
+using Newtonsoft.Json;
 
-namespace DAL.Repositories
+namespace DAL.Repositories_EF
 {
     public class PostRepository_EF : IPostRepository
     {
-
-        private readonly EF.PolitiekeBarometerContext ctx;
+        PolitiekeBarometerContext context;
 
         public PostRepository_EF()
         {
-            ctx = new EF.PolitiekeBarometerContext();
+            context = new PolitiekeBarometerContext();
         }
-
-        public PostRepository_EF(UnitOfWork uow)
+        public PostRepository_EF(UnitOfWork unitOfWork)
         {
-            ctx = uow.Context;
+            context = unitOfWork.Context;
         }
 
         public void addPosts(List<Post> list)
@@ -29,24 +30,67 @@ namespace DAL.Repositories
             throw new NotImplementedException();
         }
 
-        public List<Post> getDataConfigPosts(DataConfig dataConfig, Element element)
+        public IEnumerable<Post> getDataConfigPosts(DataConfig dataConfig)
         {
-            throw new NotImplementedException();
+            Element element = dataConfig.Element;
+
+            if (element.GetType().Equals(typeof(Persoon)))
+            {
+                return context.Posts.Where(p => p.Persoon.Naam == element.Naam);
+            }
+            else if (element.GetType().Equals(typeof(Organisatie)))
+            {
+                return context.Posts.Where(p => p.Persoon.Organisatie != null && p.Persoon.Organisatie.Id == element.Id);
+            }
+            else if (element.GetType().Equals(typeof(Thema)))
+            {
+                return context.Posts.Where(p => checkKeywords(p, element));
+            }
+            else return null;
         }
 
-        public List<Post> getPosts()
+        private bool checkKeywords(Post post, Element element)
         {
-            throw new NotImplementedException();
+            foreach (Keyword kw in post.Keywords)
+            {
+                if (kw.Themas.Contains(element))
+                {
+                    return true;
+                }
+            }
+            return false;
+
         }
 
-        public List<Tweet> readJSON()
+        public IEnumerable<Post> getPosts()
         {
-            throw new NotImplementedException();
+            return context.Posts;
+        }
+
+        public IEnumerable<Tweet> readJSON()
+        {
+            string json = "";
+            try
+            {
+                using (StreamReader r = new StreamReader("textgaindump.json"))
+                {
+                    json = r.ReadToEnd();
+                }
+            }
+            catch (IOException ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.StackTrace);
+            }
+
+            TweetDump tweetDump = JsonConvert.DeserializeObject<TweetDump>(json);
+            List<Tweet> tweets = new List<Tweet>(tweetDump.Tweet);
+            return tweets;
         }
 
         public void updatePosts()
         {
-            throw new NotImplementedException();
+            
         }
     }
 }

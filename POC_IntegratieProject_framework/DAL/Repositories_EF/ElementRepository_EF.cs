@@ -3,43 +3,44 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DAL.Repositories_EF;
+using DAL.EF;
 using Domain;
 
-namespace DAL.Repositories
+namespace DAL.Repositories_EF
 {
     public class ElementRepository_EF : IElementRepository
     {
-        private readonly EF.PolitiekeBarometerContext ctx;
+        PolitiekeBarometerContext context;
 
         public ElementRepository_EF()
         {
-            ctx = new EF.PolitiekeBarometerContext();
+            context = new PolitiekeBarometerContext();
+        }
+        public ElementRepository_EF(UnitOfWork unitOfWork)
+        {
+            context = unitOfWork.Context;
+        }
+        public void AddPersoon(Persoon persoon)
+        {
+            context.Personen.Add(persoon);
+            context.SaveChanges();
         }
 
-        public ElementRepository_EF(UnitOfWork uow)
+        public IEnumerable<Element> getAllElementen()
         {
-            ctx = uow.Context;
-        }
-
-        public Element AddPersoon(string naam)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Element> getAllElementen()
-        {
-            throw new NotImplementedException();
+            List<Element> elementen = new List<Element>();
+            elementen = context.Elementen.ToList<Element>();
+            return elementen;
         }
 
         public Element getElementByID(int elementId)
         {
-            throw new NotImplementedException();
+            return context.Elementen.Single<Element>(e => e.Id == elementId);
         }
 
         public Element getElementByName(string naam)
         {
-            throw new NotImplementedException();
+            return context.Elementen.Single<Element>(e => e.Naam == naam);
         }
     }
 }

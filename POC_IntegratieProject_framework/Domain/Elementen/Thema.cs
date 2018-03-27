@@ -9,7 +9,6 @@ namespace Domain
 {
     public class Thema : Element
     {
-
-        public List<ThemaKeyword> Keywords { get; set; }
+        public List<Keyword> Keywords { get; set; }
     }
 }

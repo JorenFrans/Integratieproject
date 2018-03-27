@@ -8,9 +8,9 @@ namespace DAL
     public interface IDashboardRepository
     {
 
-        List<Alert> getActiveAlerts();
+        IEnumerable<Alert> getActiveAlerts();
 
         DataConfig getAlertDataConfig(Alert alert);
-        List<Alert> getAllAlerts();
+        IEnumerable<Alert> getAllAlerts();
     }
 }

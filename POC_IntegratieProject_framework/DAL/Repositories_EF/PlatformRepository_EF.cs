@@ -1,24 +1,23 @@
-﻿using DAL.Repositories_EF;
+﻿using DAL.EF;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL.Repositories
+namespace DAL.Repositories_EF
 {
-    public class PlatformRepository_EF : IPlatformRepository
+    class PlatformRepository_EF : IPlatformRepository
     {
-        private readonly EF.PolitiekeBarometerContext ctx;
+        PolitiekeBarometerContext context;
 
         public PlatformRepository_EF()
         {
-            ctx = new EF.PolitiekeBarometerContext();
+            context = new PolitiekeBarometerContext();
         }
-
-        public PlatformRepository_EF(UnitOfWork uow)
+        public PlatformRepository_EF(UnitOfWork unitOfWork)
         {
-            ctx = uow.Context;
+            context = unitOfWork.Context;
         }
     }
 }

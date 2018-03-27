@@ -8,11 +8,11 @@ namespace DAL
 {
     public interface IPostRepository
     {
-        List<Post> getDataConfigPosts(DataConfig dataConfig, Element element);
+        IEnumerable<Post> getDataConfigPosts(DataConfig dataConfig);
         void updatePosts();
-        List<Tweet> readJSON();
+        IEnumerable<Tweet> readJSON();
 
-        List<Post> getPosts();
+        IEnumerable<Post> getPosts();
         void addPosts(List<Post> list);
     }
 }

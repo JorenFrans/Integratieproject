@@ -7,13 +7,14 @@ using System.Threading.Tasks;
 
 namespace Domain.Elementen
 {
-    public class ThemaKeyword
+    public class Keyword
     {
         [Key]
-        public int ThemaKeywordId { get; set; }
+        public int KeywordId { get; set; }
         [Required]
-        public string Keyword { get; set; }
-        [Required]
-        public Thema Thema { get; set; }
+        public string KeywordNaam { get; set; }
+        public List<Thema> Themas { get; set; }
+        public List<Post> Posts { get; set; }
     }
 }
+

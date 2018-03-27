@@ -2,6 +2,7 @@
 using Domain.Elementen;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace DAL.Repositories_HC
@@ -9,7 +10,7 @@ namespace DAL.Repositories_HC
     public class ElementRepository_HC : IElementRepository
     {
         List<Element> elementen = new List<Element>();
-        List<ThemaKeyword> keywords = new List<ThemaKeyword>();
+        List<Keyword> keywords = new List<Keyword>();
         public ElementRepository_HC()
         {
             addKeywords();
@@ -18,13 +19,12 @@ namespace DAL.Repositories_HC
 
         private void addKeywords()
         {
-            ThemaKeyword keyword1 = new ThemaKeyword()
+            Keyword keyword1 = new Keyword()
             {
-                Keyword = "moslimouders",
-                Thema = (Thema)elementen.Find(t => t.Naam == "Cultuur")
+                KeywordNaam = "moslimouders",
+                Themas = new List<Thema>()
             };
             keywords.Add(keyword1);
-
         }
 
         private void addElementen()
@@ -76,15 +76,15 @@ namespace DAL.Repositories_HC
         }
         private void addThemas()
         {
-            Element thema1 = new Thema()
+            Thema thema1 = new Thema()
             {
                 Id = elementen.Count,
                 Naam = "Cultuur",
-                Keywords = new List<ThemaKeyword>()
-                {
-                    keywords.Find(kw=>kw.Keyword=="moslimouders"),
-                }
+                Keywords = new List<Keyword>()
             };
+            Keyword keyword = keywords.Single(kw => kw.KeywordId == 0);
+            thema1.Keywords.Add(keyword);
+            keyword.Themas.Add(thema1);
             elementen.Add(thema1);
         }
 
@@ -100,24 +100,20 @@ namespace DAL.Repositories_HC
             return element;
         }
 
-        public List<Element> getAllElementen()
+        public IEnumerable<Element> getAllElementen()
         {
             return elementen;
         }
 
-        public Element AddPersoon(string naam)
+        public void AddPersoon(Persoon persoon)
         {
             Element element = new Persoon()
             {
                 Id = elementen.Count,
-                Naam = naam,
-                Organisatie = new Organisatie()
-                {
-
-                }
+                Naam = persoon.Naam,
+                Organisatie = persoon.Organisatie
             };
             elementen.Add(element);
-            return element;
         }
     }
 }

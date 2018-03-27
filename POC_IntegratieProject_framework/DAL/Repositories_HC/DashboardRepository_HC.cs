@@ -23,7 +23,7 @@ namespace DAL.Repositories_HC
             addAlerts();
         }
 
-        public List<Alert> getActiveAlerts()
+        public IEnumerable<Alert> getActiveAlerts()
         {
             return this.alerts.FindAll(a => a.Status == AlertStatus.ACTIEF);
         }
@@ -202,7 +202,7 @@ namespace DAL.Repositories_HC
 
         }
 
-        public List<Alert> getAllAlerts()
+        public IEnumerable<Alert> getAllAlerts()
         {
             return alerts;
         }

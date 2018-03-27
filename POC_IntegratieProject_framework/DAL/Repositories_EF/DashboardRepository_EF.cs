@@ -3,38 +3,40 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DAL.Repositories_EF;
+using DAL.EF;
 using Domain;
 
-namespace DAL.Repositories
+namespace DAL.Repositories_EF
 {
     public class DashboardRepository_EF : IDashboardRepository
     {
-        private readonly EF.PolitiekeBarometerContext ctx;
+        PolitiekeBarometerContext context;
 
         public DashboardRepository_EF()
         {
-            ctx = new EF.PolitiekeBarometerContext();
+            context = new PolitiekeBarometerContext();
         }
 
-        public DashboardRepository_EF(UnitOfWork uow)
+        public DashboardRepository_EF(UnitOfWork unitOfWork)
         {
-            ctx = uow.Context;
+            context = unitOfWork.Context;
         }
 
-        public List<Alert> getActiveAlerts()
+        public IEnumerable<Alert> getAllAlerts()
         {
-            throw new NotImplementedException();
+            return  context.Alerts.ToList<Alert>();
+        }
+
+        public IEnumerable<Alert> getActiveAlerts()
+        {
+            return context.Alerts.Where<Alert>(a=>a.Status ==AlertStatus.ACTIEF).ToList<Alert>();
         }
 
         public DataConfig getAlertDataConfig(Alert alert)
         {
-            throw new NotImplementedException();
+            return context.Alerts.Single<Alert>(a => a.AlertId == alert.AlertId).DataConfig;
         }
 
-        public List<Alert> getAllAlerts()
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

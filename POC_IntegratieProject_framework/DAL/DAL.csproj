@@ -63,15 +63,16 @@
     <Compile Include="Interfaces\IPlatformRepository.cs" />
     <Compile Include="Interfaces\IPostRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\DashboardRepositoryEF.cs" />
-    <Compile Include="Repositories\ElementRepositoryEF.cs" />
-    <Compile Include="Repositories\PlatformRepositoryEF.cs" />
-    <Compile Include="Repositories\PostRepositoryEF.cs" />
+    <Compile Include="Repositories_EF\DashboardRepository_EF.cs" />
+    <Compile Include="Repositories_EF\ElementRepository_EF.cs" />
+    <Compile Include="Repositories_EF\PlatformRepository_EF.cs" />
+    <Compile Include="Repositories_EF\PostRepository_EF.cs" />
+    <Compile Include="Repositories_EF\UnitOfWork.cs" />
     <Compile Include="Repositories_HC\DashboardRepository_HC.cs" />
     <Compile Include="Repositories_HC\ElementRepository_HC.cs" />
-    <Compile Include="Repositories_HC\Helper\Tweet.cs" />
-    <Compile Include="Repositories_HC\Helper\TweetDump.cs" />
-    <Compile Include="Repositories_HC\PlatformRepositoy_HC.cs" />
+    <Compile Include="Interfaces\Helper\Tweet.cs" />
+    <Compile Include="Interfaces\Helper\TweetDump.cs" />
+    <Compile Include="Repositories_HC\PlatformRepository_HC.cs" />
     <Compile Include="Repositories_HC\PostRepository_HC.cs" />
   </ItemGroup>
   <ItemGroup />

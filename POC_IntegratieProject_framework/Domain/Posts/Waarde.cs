@@ -11,10 +11,7 @@ namespace Domain
     {
         [Key]
         public int WaardeId { get; set; }
-        [Required]
         public String Value { get; set; }
-
-        [Required]
         public Parameter Parameter { get; set; }
     }
 }

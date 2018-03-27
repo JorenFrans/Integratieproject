@@ -4,7 +4,6 @@ using System.IO;
 using System.Text;
 using Domain;
 using Domain.Elementen;
-using Domain.Posts;
 using Newtonsoft.Json;
 
 namespace DAL.Repositories_HC
@@ -20,7 +19,7 @@ namespace DAL.Repositories_HC
             Posts = new List<Post>();
         }
 
-        public List<Tweet> readJSON()
+        public IEnumerable<Tweet> readJSON()
         {
             string json = "";
             try
@@ -56,7 +55,7 @@ namespace DAL.Repositories_HC
                         Naam = "NVA",
                     }
                 },
-                Keywords = new List<PostKeyword>(),
+                Keywords = new List<Keyword>(),
                 Parameters = new List<Parameter>()
             };
             this.Posts.Add(post4);
@@ -75,14 +74,15 @@ namespace DAL.Repositories_HC
                         Naam = "NVA",
                     }
                 },
-                Keywords = new List<PostKeyword>(),
+                Keywords = new List<Keyword>(),
                 Parameters = new List<Parameter>()
             };
             this.Posts.Add(post5);
         }
 
-        public List<Post> getDataConfigPosts(DataConfig dataConfig, Element element)
+        public IEnumerable<Post> getDataConfigPosts(DataConfig dataConfig)
         {
+            Element element = dataConfig.Element;
             List<Post> dataConfigPosts = new List<Post>();
             foreach (Post post in this.Posts)
             {
@@ -115,21 +115,20 @@ namespace DAL.Repositories_HC
 
         private bool checkKeywords(Post post, Thema thema)
         {
-            foreach (ThemaKeyword tkw in thema.Keywords)
+            foreach (Keyword kw in post.Keywords)
             {
-                foreach (PostKeyword pkw in post.Keywords)
+                foreach (Keyword tkw in thema.Keywords)
                 {
-                    if (tkw.Keyword.Equals(pkw.word))
+                    if (tkw.KeywordNaam.Equals(kw.KeywordNaam))
                     {
                         return true;
                     }
-
                 }
             }
             return false;
         }
 
-        public List<Post> getPosts()
+        public IEnumerable<Post> getPosts()
         {
             return this.Posts;
         }

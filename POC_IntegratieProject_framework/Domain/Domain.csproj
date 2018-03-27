@@ -64,12 +64,11 @@
     <Compile Include="Elementen\Organisatie.cs" />
     <Compile Include="Elementen\Persoon.cs" />
     <Compile Include="Elementen\Thema.cs" />
-    <Compile Include="Elementen\ThemaKeyword.cs" />
+    <Compile Include="Elementen\Keyword.cs" />
     <Compile Include="Platformen\Gebruiker.cs" />
     <Compile Include="Posts\Parameter.cs" />
     <Compile Include="Posts\ParameterType.cs" />
     <Compile Include="Posts\Post.cs" />
-    <Compile Include="Posts\PostKeyword.cs" />
     <Compile Include="Posts\Waarde.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,12 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DAL.EF;
 
 namespace DAL.Repositories_EF
 {
-    class UnitOfWork
+    public class UnitOfWork
     {
+        private PolitiekeBarometerContext context;
+
+        internal    PolitiekeBarometerContext Context
+        {
+            get
+            {
+                if (context == null)
+                {
+                    context = new PolitiekeBarometerContext(true);
+                }
+                return context;
+            }
+        }
+
+        public void CommitChanges()
+        {
+            context.CommitChanges();
+        }
     }
 }

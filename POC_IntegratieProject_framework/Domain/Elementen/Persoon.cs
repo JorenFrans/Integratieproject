@@ -9,8 +9,6 @@ namespace Domain
 {
     public class Persoon : Element
     {
-
-        [Required]
         public Organisatie Organisatie { get; set; }
     }
 }

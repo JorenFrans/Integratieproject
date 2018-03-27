@@ -1,10 +1,12 @@
 ﻿using BL.Interfaces;
 using DAL;
-using DAL.Repositories;
+using DAL.Repositories_EF;
+using DAL.Repositories_HC;
 using Domain;
 using Domain.Platformen;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace BL.Managers
@@ -14,12 +16,12 @@ namespace BL.Managers
         IDashboardRepository dashboardRepository;
         public DashboardManager()
         {
-            dashboardRepository = new DashboardRepository_EF();
+            dashboardRepository = new DashboardRepository_HC();
         }
 
         public List<Alert> getActiveAlerts()
         {
-            return dashboardRepository.getActiveAlerts();
+            return dashboardRepository.getActiveAlerts().ToList();
         }
 
         public DataConfig getAlertDataConfig(Alert alert)
@@ -34,7 +36,7 @@ namespace BL.Managers
 
         public List<Alert> getAllAlerts()
         {
-            return dashboardRepository.getAllAlerts();
+            return dashboardRepository.getAllAlerts().ToList();
         }
     }
 }

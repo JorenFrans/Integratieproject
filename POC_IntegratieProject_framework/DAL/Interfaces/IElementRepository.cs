@@ -9,7 +9,7 @@ namespace DAL
     {
         Element getElementByID(int elementId);
         Element getElementByName(string naam);
-        List<Element> getAllElementen();
-        Element AddPersoon(string naam);
+        IEnumerable<Element> getAllElementen();
+        void AddPersoon(Persoon persoon);
     }
 }

@@ -1,4 +1,5 @@
-﻿using DAL.Repositories_HC;
+﻿using DAL;
+using DAL.Repositories_HC;
 using Domain;
 using System;
 using System.Collections.Generic;
@@ -8,11 +9,11 @@ namespace BL.Interfaces
 {
     public interface IPostManager
     {
-        Double getHuidigeWaarde(DataConfig dataConfig, Element element);
-        List<Tweet> updatePosts();
+        Double getHuidigeWaarde(DataConfig dataConfig);
+        IEnumerable<Tweet> updatePosts();
         int getNextPostId();
         void addPosts(List<Post> list);
         double calculateTrend(DataConfig dataConfig, Element element);
-        List<Post> getDataConfigPosts(DataConfig dataConfig, Element element);
+        IEnumerable<Post> getDataConfigPosts(DataConfig dataConfig);
     }
 }

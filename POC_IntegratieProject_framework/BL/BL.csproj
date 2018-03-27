@@ -63,6 +63,7 @@
     <Compile Include="Managers\ElementManager.cs" />
     <Compile Include="Managers\PlatformManager.cs" />
     <Compile Include="Managers\PostManager.cs" />
+    <Compile Include="Managers\UnitOfWorkManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
