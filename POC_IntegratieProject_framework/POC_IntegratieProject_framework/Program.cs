@@ -20,6 +20,7 @@ namespace PolitiekeBarometer_CA
         private static IPlatformManager platformManager;
         static void Main(string[] args)
         {
+            Console.WriteLine("Versie Sam");
             elementManager = new ElementManager();
             postManager = new PostManager();
             dashboardManager = new DashboardManager();
@@ -120,10 +121,8 @@ namespace PolitiekeBarometer_CA
             foreach (Alert alert in alerts)
             {
                 Console.WriteLine("=======================");
-                Console.WriteLine("Type Element: " + alert.DataConfig.Element.GetType().Name);
                 Console.WriteLine("Alert: " + alert.AlertId);
-                Console.WriteLine("Alert voor " + alert.DataConfig.Element.Naam +
-                    " wanneer " + alert.Waarde + " " + alert.Operator + " " + alert.DataConfig.DataType);
+                Console.WriteLine("Wanneer " + alert.Waarde + " " + alert.Operator + " " + alert.DataConfig.DataType);
                 Console.WriteLine("Status: " + alert.Status);
                 Element element = elementManager.getElementByNaam(alert.DataConfig.Element.Naam);
                 Console.WriteLine("Trend: " + postManager.calculateTrend(alert.DataConfig, element));

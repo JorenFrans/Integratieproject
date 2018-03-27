@@ -31,6 +31,7 @@ namespace DAL.EF
 
             modelBuilder.Entity<Alert>().HasRequired<DataConfig>(a => a.DataConfig);
 
+
             //Relaties
 
         }
