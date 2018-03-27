@@ -8,7 +8,7 @@ namespace Domain
 {
     public class Organisatie : Element
     {
-
+        public List<Persoon> Personen { get; set; }
 
     }
 }

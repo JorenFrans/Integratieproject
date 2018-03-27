@@ -96,14 +96,18 @@ namespace PolitiekeBarometer_CA
                 {
                     Console.WriteLine("Keywords: ");
                     Thema thema = (Thema)element;
-                    foreach (Keyword word in thema.Keywords)
+                    if (thema.Keywords != null)
                     {
-                        if (word != null)
+                        foreach (Keyword word in thema.Keywords)
                         {
-                            Console.WriteLine(word.KeywordNaam);
+                            if (word != null)
+                            {
+                                Console.WriteLine(word.KeywordNaam);
 
+                            }
                         }
                     }
+
                 }
 
             }

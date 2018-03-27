@@ -19,7 +19,7 @@ namespace BL.Managers
 
         public PostManager()
         {
-            this.postRepository = new PostRepository_HC();
+            this.postRepository = new PostRepository_EF();
         }
 
         public void addPosts(List<Post> list)

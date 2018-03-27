@@ -12,7 +12,7 @@ namespace BL.Managers
 {
     public class ElementManager : IElementManager
     {
-        IElementRepository elementRepository = new ElementRepository_HC();
+        IElementRepository elementRepository = new ElementRepository_EF();
 
         public List<Element> getAllElementen()
         {
