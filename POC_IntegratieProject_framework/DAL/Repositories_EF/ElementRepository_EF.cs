@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity;
 using System.Text;
 using System.Threading.Tasks;
 using DAL.EF;
 using Domain;
+using Domain.Elementen;
 
 namespace DAL.Repositories_EF
 {
@@ -35,6 +37,11 @@ namespace DAL.Repositories_EF
 
         public Element getElementByID(int elementId)
         {
+            Element element = context.Elementen.Single<Element>(e => e.Id == elementId);
+            if (element.GetType().Equals(typeof(Thema)))
+            {
+                Thema thema = (Thema)element;
+            }
             return context.Elementen.Single<Element>(e => e.Id == elementId);
         }
 

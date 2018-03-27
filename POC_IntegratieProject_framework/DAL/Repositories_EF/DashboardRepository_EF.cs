@@ -35,7 +35,7 @@ namespace DAL.Repositories_EF
 
         public DataConfig getAlertDataConfig(Alert alert)
         {
-            return context.Alerts.Single<Alert>(a => a.AlertId == alert.AlertId).DataConfig;
+            return context.Alerts.Include(a => a.DataConfig.Element).Single<Alert>(a => a.AlertId == alert.AlertId).DataConfig;
         }
 
        

@@ -72,3 +72,22 @@ C:\Users\Samcl\OneDrive\Documenten\GitHub\Integratieproject\POC_IntegratieProjec
 C:\Users\Samcl\OneDrive\Documenten\GitHub\Integratieproject\POC_IntegratieProject_framework\DAL\obj\Debug\DAL.dll
 C:\Users\Samcl\OneDrive\Documenten\GitHub\Integratieproject\POC_IntegratieProject_framework\DAL\obj\Debug\DAL.pdb
 C:\Users\Samcl\OneDrive\Documenten\GitHub\Integratieproject\POC_IntegratieProject_framework\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\Samcl\OneDrive\Documenten\New folder (2)\POC_IntegratieProject_framework\DAL\bin\Debug\DAL.dll.config
+C:\Users\Samcl\OneDrive\Documenten\New folder (2)\POC_IntegratieProject_framework\DAL\bin\Debug\DAL.dll
+C:\Users\Samcl\OneDrive\Documenten\New folder (2)\POC_IntegratieProject_framework\DAL\bin\Debug\DAL.pdb
+C:\Users\Samcl\OneDrive\Documenten\New folder (2)\POC_IntegratieProject_framework\DAL\bin\Debug\Domain.dll
+C:\Users\Samcl\OneDrive\Documenten\New folder (2)\POC_IntegratieProject_framework\DAL\bin\Debug\EntityFramework.dll
+C:\Users\Samcl\OneDrive\Documenten\New folder (2)\POC_IntegratieProject_framework\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Samcl\OneDrive\Documenten\New folder (2)\POC_IntegratieProject_framework\DAL\bin\Debug\MathNet.Numerics.dll
+C:\Users\Samcl\OneDrive\Documenten\New folder (2)\POC_IntegratieProject_framework\DAL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Samcl\OneDrive\Documenten\New folder (2)\POC_IntegratieProject_framework\DAL\bin\Debug\Domain.pdb
+C:\Users\Samcl\OneDrive\Documenten\New folder (2)\POC_IntegratieProject_framework\DAL\bin\Debug\Domain.dll.config
+C:\Users\Samcl\OneDrive\Documenten\New folder (2)\POC_IntegratieProject_framework\DAL\bin\Debug\EntityFramework.xml
+C:\Users\Samcl\OneDrive\Documenten\New folder (2)\POC_IntegratieProject_framework\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Samcl\OneDrive\Documenten\New folder (2)\POC_IntegratieProject_framework\DAL\bin\Debug\MathNet.Numerics.xml
+C:\Users\Samcl\OneDrive\Documenten\New folder (2)\POC_IntegratieProject_framework\DAL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Samcl\OneDrive\Documenten\New folder (2)\POC_IntegratieProject_framework\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Samcl\OneDrive\Documenten\New folder (2)\POC_IntegratieProject_framework\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Samcl\OneDrive\Documenten\New folder (2)\POC_IntegratieProject_framework\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\Samcl\OneDrive\Documenten\New folder (2)\POC_IntegratieProject_framework\DAL\obj\Debug\DAL.dll
+C:\Users\Samcl\OneDrive\Documenten\New folder (2)\POC_IntegratieProject_framework\DAL\obj\Debug\DAL.pdb
