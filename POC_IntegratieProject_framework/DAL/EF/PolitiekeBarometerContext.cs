@@ -23,18 +23,8 @@ namespace DAL.EF
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-<<<<<<< HEAD
-<<<<<<< HEAD
             modelBuilder.Entity<Thema>().HasMany<Keyword>(kw => kw.Keywords);
             modelBuilder.Entity<Keyword>().HasMany<Thema>(t => t.Themas);
-=======
-            modelBuilder.Entity<Thema>().HasMany<Keyword>(kw =>kw.Keywords);
-            modelBuilder.Entity<Keyword>().HasMany<Thema>(t =>t.Themas);
->>>>>>> 22c6582408f398b88e0d8488201079f3244f6066
-=======
-            modelBuilder.Entity<Thema>().HasMany<Keyword>(kw =>kw.Keywords);
-            modelBuilder.Entity<Keyword>().HasMany<Thema>(t =>t.Themas);
->>>>>>> 22c6582408f398b88e0d8488201079f3244f6066
 
             modelBuilder.Entity<Post>().HasMany<Keyword>(kw => kw.Keywords);
             modelBuilder.Entity<Keyword>().HasMany<Post>(t => t.Posts);
