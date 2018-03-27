@@ -35,3 +35,22 @@ C:\Users\Samcl\OneDrive\Documenten\Git-integratieProject\POC_IntegratieProject_f
 C:\Users\Samcl\OneDrive\Documenten\Git-integratieProject\POC_IntegratieProject_framework\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 C:\Users\Samcl\OneDrive\Documenten\Git-integratieProject\POC_IntegratieProject_framework\DAL\obj\Debug\DAL.dll
 C:\Users\Samcl\OneDrive\Documenten\Git-integratieProject\POC_IntegratieProject_framework\DAL\obj\Debug\DAL.pdb
+C:\Users\Thomas\Documents\School KDG\School 2017-2018\Integratieproject\Integratieproject git\POC_IntegratieProject_framework\DAL\bin\Debug\DAL.dll.config
+C:\Users\Thomas\Documents\School KDG\School 2017-2018\Integratieproject\Integratieproject git\POC_IntegratieProject_framework\DAL\bin\Debug\DAL.dll
+C:\Users\Thomas\Documents\School KDG\School 2017-2018\Integratieproject\Integratieproject git\POC_IntegratieProject_framework\DAL\bin\Debug\DAL.pdb
+C:\Users\Thomas\Documents\School KDG\School 2017-2018\Integratieproject\Integratieproject git\POC_IntegratieProject_framework\DAL\bin\Debug\Domain.dll
+C:\Users\Thomas\Documents\School KDG\School 2017-2018\Integratieproject\Integratieproject git\POC_IntegratieProject_framework\DAL\bin\Debug\EntityFramework.dll
+C:\Users\Thomas\Documents\School KDG\School 2017-2018\Integratieproject\Integratieproject git\POC_IntegratieProject_framework\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Thomas\Documents\School KDG\School 2017-2018\Integratieproject\Integratieproject git\POC_IntegratieProject_framework\DAL\bin\Debug\MathNet.Numerics.dll
+C:\Users\Thomas\Documents\School KDG\School 2017-2018\Integratieproject\Integratieproject git\POC_IntegratieProject_framework\DAL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Thomas\Documents\School KDG\School 2017-2018\Integratieproject\Integratieproject git\POC_IntegratieProject_framework\DAL\bin\Debug\Domain.pdb
+C:\Users\Thomas\Documents\School KDG\School 2017-2018\Integratieproject\Integratieproject git\POC_IntegratieProject_framework\DAL\bin\Debug\Domain.dll.config
+C:\Users\Thomas\Documents\School KDG\School 2017-2018\Integratieproject\Integratieproject git\POC_IntegratieProject_framework\DAL\bin\Debug\EntityFramework.xml
+C:\Users\Thomas\Documents\School KDG\School 2017-2018\Integratieproject\Integratieproject git\POC_IntegratieProject_framework\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Thomas\Documents\School KDG\School 2017-2018\Integratieproject\Integratieproject git\POC_IntegratieProject_framework\DAL\bin\Debug\MathNet.Numerics.xml
+C:\Users\Thomas\Documents\School KDG\School 2017-2018\Integratieproject\Integratieproject git\POC_IntegratieProject_framework\DAL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Thomas\Documents\School KDG\School 2017-2018\Integratieproject\Integratieproject git\POC_IntegratieProject_framework\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Thomas\Documents\School KDG\School 2017-2018\Integratieproject\Integratieproject git\POC_IntegratieProject_framework\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Thomas\Documents\School KDG\School 2017-2018\Integratieproject\Integratieproject git\POC_IntegratieProject_framework\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\Thomas\Documents\School KDG\School 2017-2018\Integratieproject\Integratieproject git\POC_IntegratieProject_framework\DAL\obj\Debug\DAL.dll
+C:\Users\Thomas\Documents\School KDG\School 2017-2018\Integratieproject\Integratieproject git\POC_IntegratieProject_framework\DAL\obj\Debug\DAL.pdb
