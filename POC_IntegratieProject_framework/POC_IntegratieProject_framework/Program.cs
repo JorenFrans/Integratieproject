@@ -13,14 +13,22 @@ namespace PolitiekeBarometer_CA
 {
     class Program
     {
-
         private static IElementManager elementManager;
         private static IPostManager postManager;
         private static IDashboardManager dashboardManager;
         private static IPlatformManager platformManager;
         static void Main(string[] args)
         {
+<<<<<<< HEAD
             Console.WriteLine("Versie Sam");
+=======
+<<<<<<< HEAD
+            Console.WriteLine("Test git");
+
+=======
+            Console.WriteLine("Versie Sam");
+>>>>>>> 037a5e257a857a7f47a4d41840c4870514d45436
+>>>>>>> 22c6582408f398b88e0d8488201079f3244f6066
             elementManager = new ElementManager();
             postManager = new PostManager();
             dashboardManager = new DashboardManager();

@@ -14,7 +14,17 @@ namespace DAL.EF
     {
         protected override void Seed(PolitiekeBarometerContext context)
         {
+<<<<<<< HEAD
             #region DataConfigs
+=======
+            addElementen(context);
+            addDataConfigs(context);
+           // addAlerts(context);
+            base.Seed(context);
+        }
+        private void addDataConfigs(PolitiekeBarometerContext context)
+        {
+>>>>>>> 22c6582408f398b88e0d8488201079f3244f6066
             DataConfig dataConfig1 = new DataConfig
             {
                 DataConfiguratieId = 0,
@@ -51,6 +61,7 @@ namespace DAL.EF
                     Naam = "Imade Annouri"
                 }
             };
+<<<<<<< HEAD
             #endregion
 
             #region Gebruikers
@@ -86,6 +97,13 @@ namespace DAL.EF
             #endregion
 
             #region Alerts
+=======
+            context.DataConfigs.Add(dataConfig1);
+            context.DataConfigs.Add(dataConfig2);
+            context.DataConfigs.Add(dataConfig3);
+            context.DataConfigs.Add(dataConfig4);
+
+>>>>>>> 22c6582408f398b88e0d8488201079f3244f6066
             Alert alert1 = new Alert
             {
                 ApplicatieMelding = true,
@@ -95,7 +113,21 @@ namespace DAL.EF
                 Operator = "<",
                 Status = AlertStatus.ACTIEF,
                 DataConfig = dataConfig1,
+<<<<<<< HEAD
                 Dashboard = dashboard1
+=======
+                Dashboard = new Dashboard
+                {
+                    DashboardId = 1,
+                    Gebruiker = new Domain.Platformen.Gebruiker
+                    {
+                        Email = "sam.claessen@student.kdg.be",
+                        Naam = "Sam Claessen",
+                        GebruikerId = 1,
+                        Wachtwoord = "wachtwoord"
+                    }
+                }
+>>>>>>> 22c6582408f398b88e0d8488201079f3244f6066
             };
 
             Alert alert2 = new Alert
@@ -107,7 +139,21 @@ namespace DAL.EF
                 Operator = "<",
                 Status = AlertStatus.ACTIEF,
                 DataConfig = dataConfig2,
+<<<<<<< HEAD
                 Dashboard = dashboard1
+=======
+                Dashboard = new Dashboard
+                {
+                    DashboardId = 1,
+                    Gebruiker = new Domain.Platformen.Gebruiker
+                    {
+                        Email = "sam.claessen@student.kdg.be",
+                        Naam = "Sam Claessen",
+                        GebruikerId = 1,
+                        Wachtwoord = "wachtwoord"
+                    }
+                }
+>>>>>>> 22c6582408f398b88e0d8488201079f3244f6066
             };
             Alert alert3 = new Alert
             {
@@ -118,7 +164,21 @@ namespace DAL.EF
                 Operator = "<",
                 Status = AlertStatus.ACTIEF,
                 DataConfig = dataConfig3,
+<<<<<<< HEAD
                 Dashboard = dashboard2
+=======
+                Dashboard = new Dashboard
+                {
+                    DashboardId = 2,
+                    Gebruiker = new Domain.Platformen.Gebruiker
+                    {
+                        Email = "thomas.somers@student.kdg.be",
+                        Naam = "Thomas Somers",
+                        GebruikerId = 2,
+                        Wachtwoord = "wachtwoord"
+                    }
+                }
+>>>>>>> 22c6582408f398b88e0d8488201079f3244f6066
             };
 
             Alert alert4 = new Alert
@@ -130,7 +190,21 @@ namespace DAL.EF
                 Operator = ">",
                 Status = AlertStatus.ACTIEF,
                 DataConfig = dataConfig4,
+<<<<<<< HEAD
                 Dashboard = dashboard2
+=======
+                Dashboard = new Dashboard
+                {
+                    DashboardId = 2,
+                    Gebruiker = new Domain.Platformen.Gebruiker
+                    {
+                        Email = "thomas.somers@student.kdg.be",
+                        Naam = "Thomas Somers",
+                        GebruikerId = 2,
+                        Wachtwoord = "wachtwoord"
+                    }
+                }
+>>>>>>> 22c6582408f398b88e0d8488201079f3244f6066
             };
             Alert alert5 = new Alert
             {
@@ -141,12 +215,45 @@ namespace DAL.EF
                 Operator = "<",
                 Status = AlertStatus.INACTIEF,
                 DataConfig = dataConfig1,
+<<<<<<< HEAD
                 Dashboard = dashboard2
             };
             #endregion
 
             #region Organisatie
             Organisatie organisatie1 = new Organisatie()
+=======
+                Dashboard = new Dashboard
+                {
+                    DashboardId = 2,
+                    Gebruiker = new Domain.Platformen.Gebruiker
+                    {
+                        Email = "thomas.somers@student.kdg.be",
+                        Naam = "Thomas Somers",
+                        GebruikerId = 2,
+                        Wachtwoord = "wachtwoord"
+                    }
+                }
+            };
+            context.Alerts.Add(alert1);
+            context.Alerts.Add(alert2);
+            context.Alerts.Add(alert3);
+            context.Alerts.Add(alert4);
+            context.Alerts.Add(alert5);
+            context.SaveChanges();
+        }
+             
+        private void addElementen(PolitiekeBarometerContext context)
+        {
+            addKeywords(context);
+            addOrganisaties(context);
+            addPersonen(context);
+            addThemas(context);
+        }
+        private void addOrganisaties(PolitiekeBarometerContext context)
+        {
+            Element organisatie1 = new Organisatie()
+>>>>>>> 22c6582408f398b88e0d8488201079f3244f6066
             {
                 Naam = "NVA",
                 Personen = new List<Persoon>()
