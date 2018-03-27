@@ -24,6 +24,9 @@ namespace DAL.EF
         }
         private void addDataConfigs(PolitiekeBarometerContext context)
         {
+<<<<<<< HEAD
+>>>>>>> 22c6582408f398b88e0d8488201079f3244f6066
+=======
 >>>>>>> 22c6582408f398b88e0d8488201079f3244f6066
             DataConfig dataConfig1 = new DataConfig
             {
@@ -62,6 +65,7 @@ namespace DAL.EF
                 }
             };
 <<<<<<< HEAD
+<<<<<<< HEAD
             #endregion
 
             #region Gebruikers
@@ -98,11 +102,16 @@ namespace DAL.EF
 
             #region Alerts
 =======
+=======
+>>>>>>> 22c6582408f398b88e0d8488201079f3244f6066
             context.DataConfigs.Add(dataConfig1);
             context.DataConfigs.Add(dataConfig2);
             context.DataConfigs.Add(dataConfig3);
             context.DataConfigs.Add(dataConfig4);
 
+<<<<<<< HEAD
+>>>>>>> 22c6582408f398b88e0d8488201079f3244f6066
+=======
 >>>>>>> 22c6582408f398b88e0d8488201079f3244f6066
             Alert alert1 = new Alert
             {
@@ -114,8 +123,11 @@ namespace DAL.EF
                 Status = AlertStatus.ACTIEF,
                 DataConfig = dataConfig1,
 <<<<<<< HEAD
+<<<<<<< HEAD
                 Dashboard = dashboard1
 =======
+=======
+>>>>>>> 22c6582408f398b88e0d8488201079f3244f6066
                 Dashboard = new Dashboard
                 {
                     DashboardId = 1,
@@ -140,8 +152,11 @@ namespace DAL.EF
                 Status = AlertStatus.ACTIEF,
                 DataConfig = dataConfig2,
 <<<<<<< HEAD
+<<<<<<< HEAD
                 Dashboard = dashboard1
 =======
+=======
+>>>>>>> 22c6582408f398b88e0d8488201079f3244f6066
                 Dashboard = new Dashboard
                 {
                     DashboardId = 1,
@@ -165,8 +180,11 @@ namespace DAL.EF
                 Status = AlertStatus.ACTIEF,
                 DataConfig = dataConfig3,
 <<<<<<< HEAD
+<<<<<<< HEAD
                 Dashboard = dashboard2
 =======
+=======
+>>>>>>> 22c6582408f398b88e0d8488201079f3244f6066
                 Dashboard = new Dashboard
                 {
                     DashboardId = 2,
@@ -191,8 +209,11 @@ namespace DAL.EF
                 Status = AlertStatus.ACTIEF,
                 DataConfig = dataConfig4,
 <<<<<<< HEAD
+<<<<<<< HEAD
                 Dashboard = dashboard2
 =======
+=======
+>>>>>>> 22c6582408f398b88e0d8488201079f3244f6066
                 Dashboard = new Dashboard
                 {
                     DashboardId = 2,
@@ -216,6 +237,7 @@ namespace DAL.EF
                 Status = AlertStatus.INACTIEF,
                 DataConfig = dataConfig1,
 <<<<<<< HEAD
+<<<<<<< HEAD
                 Dashboard = dashboard2
             };
             #endregion
@@ -223,6 +245,8 @@ namespace DAL.EF
             #region Organisatie
             Organisatie organisatie1 = new Organisatie()
 =======
+=======
+>>>>>>> 22c6582408f398b88e0d8488201079f3244f6066
                 Dashboard = new Dashboard
                 {
                     DashboardId = 2,

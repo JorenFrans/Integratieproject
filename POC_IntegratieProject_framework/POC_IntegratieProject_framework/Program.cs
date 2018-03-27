@@ -20,14 +20,20 @@ namespace PolitiekeBarometer_CA
         static void Main(string[] args)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             Console.WriteLine("Versie Sam");
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> 22c6582408f398b88e0d8488201079f3244f6066
             Console.WriteLine("Test git");
 
 =======
             Console.WriteLine("Versie Sam");
 >>>>>>> 037a5e257a857a7f47a4d41840c4870514d45436
+<<<<<<< HEAD
+>>>>>>> 22c6582408f398b88e0d8488201079f3244f6066
+=======
 >>>>>>> 22c6582408f398b88e0d8488201079f3244f6066
             elementManager = new ElementManager();
             postManager = new PostManager();
