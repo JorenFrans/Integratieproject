@@ -19,7 +19,7 @@ namespace PolitiekeBarometer_CA
         private static IPlatformManager platformManager;
         static void Main(string[] args)
         {
-            
+            Console.WriteLine("testThomas");
             elementManager = new ElementManager();
             postManager = new PostManager();
             dashboardManager = new DashboardManager();
