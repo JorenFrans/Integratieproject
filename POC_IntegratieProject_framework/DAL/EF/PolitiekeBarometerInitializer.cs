@@ -15,130 +15,13 @@ namespace DAL.EF
         {
             addElementen(context);
             addDataConfigs(context);
-            addAlerts(context);
+           // addAlerts(context);
             base.Seed(context);
         }
-        private void addAlerts(PolitiekeBarometerContext context)
-        {
-            Alert alert1 = new Alert
-            {
-                ApplicatieMelding = true,
-                BrowserMelding = true,
-                EmailMelding = true,
-                Waarde = 50,
-                Operator = "<",
-                Status = AlertStatus.ACTIEF,
-                DataConfig = context.DataConfigs.Single<DataConfig>(dc => dc.DataConfiguratieId == 0),
-                Dashboard = new Dashboard
-                {
-                    DashboardId = 1,
-                    Gebruiker = new Domain.Platformen.Gebruiker
-                    {
-                        Email = "sam.claessen@student.kdg.be",
-                        Naam = "Sam Claessen",
-                        GebruikerId = 1,
-                        Wachtwoord = "wachtwoord"
-                    }
-                }
-            };
-
-            Alert alert2 = new Alert
-            {
-                ApplicatieMelding = true,
-                BrowserMelding = true,
-                EmailMelding = true,
-                Waarde = 50,
-                Operator = "<",
-                Status = AlertStatus.ACTIEF,
-                DataConfig = context.DataConfigs.Single<DataConfig>(dc => dc.DataConfiguratieId == 1),
-                Dashboard = new Dashboard
-                {
-                    DashboardId = 1,
-                    Gebruiker = new Domain.Platformen.Gebruiker
-                    {
-                        Email = "sam.claessen@student.kdg.be",
-                        Naam = "Sam Claessen",
-                        GebruikerId = 1,
-                        Wachtwoord = "wachtwoord"
-                    }
-                }
-            };
-            Alert alert3 = new Alert
-            {
-                ApplicatieMelding = false,
-                BrowserMelding = true,
-                EmailMelding = false,
-                Waarde = 50,
-                Operator = "<",
-                Status = AlertStatus.ACTIEF,
-                DataConfig = context.DataConfigs.Single<DataConfig>(dc => dc.DataConfiguratieId == 2),
-                Dashboard = new Dashboard
-                {
-                    DashboardId = 2,
-                    Gebruiker = new Domain.Platformen.Gebruiker
-                    {
-                        Email = "thomas.somers@student.kdg.be",
-                        Naam = "Thomas Somers",
-                        GebruikerId = 2,
-                        Wachtwoord = "wachtwoord"
-                    }
-                }
-            };
-
-            Alert alert4 = new Alert
-            {
-                ApplicatieMelding = false,
-                BrowserMelding = false,
-                EmailMelding = true,
-                Waarde = -4,
-                Operator = ">",
-                Status = AlertStatus.ACTIEF,
-                DataConfig = context.DataConfigs.Single<DataConfig>(dc => dc.DataConfiguratieId == 3),
-                Dashboard = new Dashboard
-                {
-                    DashboardId = 2,
-                    Gebruiker = new Domain.Platformen.Gebruiker
-                    {
-                        Email = "thomas.somers@student.kdg.be",
-                        Naam = "Thomas Somers",
-                        GebruikerId = 2,
-                        Wachtwoord = "wachtwoord"
-                    }
-                }
-            };
-            Alert alert5 = new Alert
-            {
-                ApplicatieMelding = true,
-                BrowserMelding = false,
-                EmailMelding = false,
-                Waarde = 50,
-                Operator = "<",
-                Status = AlertStatus.INACTIEF,
-                DataConfig = context.DataConfigs.Single<DataConfig>(dc => dc.DataConfiguratieId == 0),
-                Dashboard = new Dashboard
-                {
-                    DashboardId = 2,
-                    Gebruiker = new Domain.Platformen.Gebruiker
-                    {
-                        Email = "thomas.somers@student.kdg.be",
-                        Naam = "Thomas Somers",
-                        GebruikerId = 2,
-                        Wachtwoord = "wachtwoord"
-                    }
-                }
-            };
-            context.Alerts.Add(alert1);
-            context.Alerts.Add(alert2);
-            context.Alerts.Add(alert3);
-            context.Alerts.Add(alert4);
-            context.Alerts.Add(alert5);
-            context.SaveChanges();
-        }
-
         private void addDataConfigs(PolitiekeBarometerContext context)
         {
             DataConfig dataConfig1 = new DataConfig
-            { 
+            {
                 DataConfiguratieId = 0,
                 DataType = DataType.TOTAAL,
                 Element = new Persoon()
@@ -177,8 +60,122 @@ namespace DAL.EF
             context.DataConfigs.Add(dataConfig2);
             context.DataConfigs.Add(dataConfig3);
             context.DataConfigs.Add(dataConfig4);
+
+            Alert alert1 = new Alert
+            {
+                ApplicatieMelding = true,
+                BrowserMelding = true,
+                EmailMelding = true,
+                Waarde = 50,
+                Operator = "<",
+                Status = AlertStatus.ACTIEF,
+                DataConfig = dataConfig1,
+                Dashboard = new Dashboard
+                {
+                    DashboardId = 1,
+                    Gebruiker = new Domain.Platformen.Gebruiker
+                    {
+                        Email = "sam.claessen@student.kdg.be",
+                        Naam = "Sam Claessen",
+                        GebruikerId = 1,
+                        Wachtwoord = "wachtwoord"
+                    }
+                }
+            };
+
+            Alert alert2 = new Alert
+            {
+                ApplicatieMelding = true,
+                BrowserMelding = true,
+                EmailMelding = true,
+                Waarde = 50,
+                Operator = "<",
+                Status = AlertStatus.ACTIEF,
+                DataConfig = dataConfig2,
+                Dashboard = new Dashboard
+                {
+                    DashboardId = 1,
+                    Gebruiker = new Domain.Platformen.Gebruiker
+                    {
+                        Email = "sam.claessen@student.kdg.be",
+                        Naam = "Sam Claessen",
+                        GebruikerId = 1,
+                        Wachtwoord = "wachtwoord"
+                    }
+                }
+            };
+            Alert alert3 = new Alert
+            {
+                ApplicatieMelding = false,
+                BrowserMelding = true,
+                EmailMelding = false,
+                Waarde = 50,
+                Operator = "<",
+                Status = AlertStatus.ACTIEF,
+                DataConfig = dataConfig3,
+                Dashboard = new Dashboard
+                {
+                    DashboardId = 2,
+                    Gebruiker = new Domain.Platformen.Gebruiker
+                    {
+                        Email = "thomas.somers@student.kdg.be",
+                        Naam = "Thomas Somers",
+                        GebruikerId = 2,
+                        Wachtwoord = "wachtwoord"
+                    }
+                }
+            };
+
+            Alert alert4 = new Alert
+            {
+                ApplicatieMelding = false,
+                BrowserMelding = false,
+                EmailMelding = true,
+                Waarde = -4,
+                Operator = ">",
+                Status = AlertStatus.ACTIEF,
+                DataConfig = dataConfig4,
+                Dashboard = new Dashboard
+                {
+                    DashboardId = 2,
+                    Gebruiker = new Domain.Platformen.Gebruiker
+                    {
+                        Email = "thomas.somers@student.kdg.be",
+                        Naam = "Thomas Somers",
+                        GebruikerId = 2,
+                        Wachtwoord = "wachtwoord"
+                    }
+                }
+            };
+            Alert alert5 = new Alert
+            {
+                ApplicatieMelding = true,
+                BrowserMelding = false,
+                EmailMelding = false,
+                Waarde = 50,
+                Operator = "<",
+                Status = AlertStatus.INACTIEF,
+                DataConfig = dataConfig1,
+                Dashboard = new Dashboard
+                {
+                    DashboardId = 2,
+                    Gebruiker = new Domain.Platformen.Gebruiker
+                    {
+                        Email = "thomas.somers@student.kdg.be",
+                        Naam = "Thomas Somers",
+                        GebruikerId = 2,
+                        Wachtwoord = "wachtwoord"
+                    }
+                }
+            };
+            context.Alerts.Add(alert1);
+            context.Alerts.Add(alert2);
+            context.Alerts.Add(alert3);
+            context.Alerts.Add(alert4);
+            context.Alerts.Add(alert5);
             context.SaveChanges();
         }
+             
         private void addElementen(PolitiekeBarometerContext context)
         {
             addKeywords(context);

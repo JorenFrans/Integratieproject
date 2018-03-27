@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Repositories_EF
 {
-    class PlatformRepository_EF : IPlatformRepository
+    public class PlatformRepository_EF : IPlatformRepository
     {
         PolitiekeBarometerContext context;
 

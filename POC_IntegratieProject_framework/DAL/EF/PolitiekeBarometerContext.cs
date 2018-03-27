@@ -14,14 +14,22 @@ namespace DAL.EF
         private readonly bool delaySave;
         public PolitiekeBarometerContext(bool unitOfWorkPresent = false) : base("Politieke_BarometerDB")
         {
-            Database.SetInitializer<PolitiekeBarometerContext>(new PolitiekeBarometerInitializer());
             delaySave = unitOfWorkPresent;
-
+            Database.SetInitializer<PolitiekeBarometerContext>(new PolitiekeBarometerInitializer());
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Thema>().HasMany<Keyword>(kw =>kw.Keywords);
+            modelBuilder.Entity<Keyword>().HasMany<Thema>(t =>t.Themas);
+
+            modelBuilder.Entity<Post>().HasMany<Keyword>(kw => kw.Keywords);
+            modelBuilder.Entity<Keyword>().HasMany<Post>(t => t.Posts);
+
+            modelBuilder.Entity<Organisatie>().HasMany<Persoon>(p => p.Personen);
+
+            modelBuilder.Entity<Alert>().HasRequired<DataConfig>(a => a.DataConfig);
 
             //Relaties
 
