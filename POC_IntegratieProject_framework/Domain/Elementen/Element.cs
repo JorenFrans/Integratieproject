@@ -12,6 +12,14 @@ namespace Domain
         [Key]
         public int Id { get; set; }
         public string Naam { get; set; }
+
+        public override bool Equals(object obj)
+        {
+            var element = obj as Element;
+            return element != null &&
+                   Id == element.Id &&
+                   Naam == element.Naam;
+        }
     }
 }
 

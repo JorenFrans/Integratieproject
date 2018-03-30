@@ -115,5 +115,55 @@ namespace DAL.Repositories_HC
             };
             elementen.Add(element);
         }
+
+        public Thema GetThemaByName(string naam)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Thema GetThemaById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Organisatie GetOrganisatieByName(string naam)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Organisatie GetOrganisatieById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Persoon GetPersoonByName(string naam)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Persoon GetPersoonById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Persoon GetElementById(int id, Type type)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Persoon GetElementByNaam(string naam, Type type)
+        {
+            throw new NotImplementedException();
+        }
+
+        Element IElementRepository.GetElementById(int id, Type type)
+        {
+            throw new NotImplementedException();
+        }
+
+        Element IElementRepository.GetElementByNaam(string naam, Type type)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -14,42 +14,86 @@ namespace DAL.EF
     {
         protected override void Seed(PolitiekeBarometerContext context)
         {
+            #region Organisatie
+            Organisatie organisatie1 = new Organisatie()
+            {
+                Naam = "NVA",
+                Personen = new List<Persoon>()
+            };
+            Organisatie organisatie2 = new Organisatie()
+            {
+                Naam = "GROEN",
+                Personen = new List<Persoon>()
+            };
+            #endregion
+
+            #region Personen
+            Persoon persoon1 = new Persoon()
+            {
+                Naam = "Imade Annouri",
+                Organisatie = organisatie1
+            };
+
+            Persoon persoon2 = new Persoon()
+            {
+                Naam = "Caroline Bastiaens",
+                Organisatie = organisatie2
+            };
+            Persoon persoon3 = new Persoon()
+            {
+                Naam = "Vera Celis",
+                Organisatie = organisatie2
+            };
+
+            organisatie1.Personen.Add(persoon1);
+            organisatie2.Personen.Add(persoon2);
+            organisatie2.Personen.Add(persoon3);
+            #endregion
+
+            #region Keywords
+            Keyword keyword1 = new Keyword()
+            {
+                KeywordNaam = "moslimouders",
+                Themas = new List<Thema>()
+            };
+            #endregion
+
+            #region Themas
+            Thema thema1 = new Thema()
+            {
+                Naam = "Cultuur",
+                Keywords = new List<Keyword>()
+                {
+                    keyword1
+                }
+            };
+            keyword1.Themas.Add(thema1);
+            #endregion
+
             #region DataConfigs
             DataConfig dataConfig1 = new DataConfig
             {
                 DataConfiguratieId = 0,
                 DataType = DataType.TOTAAL,
-                Element = new Persoon()
-                {
-                    Naam = "Imade Annouri"
-                }
+                Element = persoon1
             };
 
             DataConfig dataConfig2 = new DataConfig
             {
                 DataType = DataType.TOTAAL,
-                Element = new Organisatie()
-                {
-                    Naam = "GROEN"
-                }
+                Element = organisatie2
             };
 
             DataConfig dataConfig3 = new DataConfig
             {
                 DataType = DataType.TOTAAL,
-                Element = new Thema()
-                {
-                    Naam = "Cultuur"
-                }
+                Element = thema1
             };
 
             DataConfig dataConfig4 = new DataConfig
             {
                 DataType = DataType.TREND,
-                Element = new Persoon()
-                {
-                    Naam = "Imade Annouri"
-                }
+                Element = persoon1
             };
             #endregion
 
@@ -144,63 +188,6 @@ namespace DAL.EF
                 Dashboard = dashboard2
             };
             #endregion
-
-            #region Organisatie
-            Organisatie organisatie1 = new Organisatie()
-            {
-                Naam = "NVA",
-                Personen = new List<Persoon>()
-            };
-            Organisatie organisatie2 = new Organisatie()
-            {
-                Naam = "GROEN",
-                Personen = new List<Persoon>()
-            };
-            #endregion
-
-            #region Personen
-            Persoon persoon1 = new Persoon()
-            {
-                Naam = "Imade Annouri",
-                Organisatie = organisatie1
-            };
-
-            Persoon persoon2 = new Persoon()
-            {
-                Naam = "Caroline Bastiaens",
-                Organisatie = organisatie2
-            };
-            Persoon persoon3 = new Persoon()
-            {
-                Naam = "Vera Celis",
-                Organisatie = organisatie2
-            };
-
-            organisatie1.Personen.Add(persoon1);
-            organisatie2.Personen.Add(persoon2);
-            organisatie2.Personen.Add(persoon3);
-            #endregion
-
-            #region Keywords
-            Keyword keyword1 = new Keyword()
-            {
-                KeywordNaam = "moslimouders",
-                Themas = new List<Thema>()
-            };
-            #endregion
-
-            #region Themas
-            Element thema1 = new Thema()
-            {
-                Naam = "Cultuur",
-                Keywords = new List<Keyword>()
-                {
-                    keyword1
-                }
-            };
-            keyword1.Themas.Add((Thema)thema1);
-            #endregion
-
             #region AddToDB
 
             #region AddPlatformen
@@ -239,18 +226,18 @@ namespace DAL.EF
             #endregion
 
             #region AddOrganisaties
-            context.Elementen.Add(organisatie1);
-            context.Elementen.Add(organisatie2);
+            context.Organisaties.Add(organisatie1);
+            context.Organisaties.Add(organisatie2);
             #endregion
 
             #region AddPersonen
-            context.Elementen.Add(persoon1);
-            context.Elementen.Add(persoon2);
-            context.Elementen.Add(persoon3);
+            context.Personen.Add(persoon1);
+            context.Personen.Add(persoon2);
+            context.Personen.Add(persoon3);
             #endregion
 
             #region AddThemas
-            context.Elementen.Add(thema1);
+            context.Themas.Add(thema1);
             #endregion
             #endregion
             #endregion

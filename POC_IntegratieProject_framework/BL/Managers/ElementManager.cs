@@ -19,9 +19,9 @@ namespace BL.Managers
             return elementRepository.getAllElementen().ToList();
         }
 
-        public Element getElementByNaam(string naam)
+        public Element getElementByNaam(string naam, Type type)
         {
-            Element element = elementRepository.getElementByName(naam);
+            Element element = elementRepository.GetElementByNaam(naam, type);
 
             if (element == null)
             {

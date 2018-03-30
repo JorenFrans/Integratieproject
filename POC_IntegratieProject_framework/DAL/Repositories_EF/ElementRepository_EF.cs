@@ -31,23 +31,71 @@ namespace DAL.Repositories_EF
         public IEnumerable<Element> getAllElementen()
         {
             List<Element> elementen = new List<Element>();
-            elementen = context.Elementen.ToList<Element>();
+            elementen.AddRange(context.Themas);
+            elementen.AddRange(context.Personen);
+            elementen.AddRange(context.Organisaties);
             return elementen;
         }
-
-        public Element getElementByID(int elementId)
+        public Element GetElementById(int id, Type type)
         {
-            Element element = context.Elementen.Single<Element>(e => e.Id == elementId);
-            if (element.GetType().Equals(typeof(Thema)))
+            if (type.Equals(typeof(Thema)))
             {
-                Thema thema = (Thema)element;
+                return GetThemaById(id);
             }
-            return context.Elementen.Single<Element>(e => e.Id == elementId);
+            else if (type.Equals(typeof(Organisatie)))
+            {
+                return GetOrganisatieById(id);
+            }
+            else if (type.Equals(typeof(Persoon)))
+            {
+                return GetPersoonById(id);
+            }
+            return null;
+        }
+        public Element GetElementByNaam(string naam, Type type)
+        {
+            if (type.Equals(typeof(Thema)))
+            {
+                return GetThemaByName(naam);
+            }
+            else if (type.Equals(typeof(Organisatie)))
+            {
+                return GetOrganisatieByName(naam);
+            }
+            else if (type.Equals(typeof(Persoon)))
+            {
+                return GetPersoonByName(naam);
+            }
+            return null;
+        }
+        public Organisatie GetOrganisatieById(int id)
+        {
+            return context.Organisaties.Single(o => o.Id == id);
         }
 
-        public Element getElementByName(string naam)
+        public Organisatie GetOrganisatieByName(string naam)
         {
-            return context.Elementen.Single<Element>(e => e.Naam == naam);
+            return context.Organisaties.Single(o => o.Naam == naam);
+        }
+
+        public Persoon GetPersoonById(int id)
+        {
+            return context.Personen.Single(o => o.Id == id);
+        }
+
+        public Persoon GetPersoonByName(string naam)
+        {
+            return context.Personen.Single(o => o.Naam == naam);
+        }
+
+        public Thema GetThemaById(int id)
+        {
+            return context.Themas.Single(o => o.Id == id);
+        }
+
+        public Thema GetThemaByName(string naam)
+        {
+            return context.Themas.Single(o => o.Naam == naam);
         }
     }
 }

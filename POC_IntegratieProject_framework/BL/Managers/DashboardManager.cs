@@ -13,30 +13,68 @@ namespace BL.Managers
 {
     public class DashboardManager : IDashboardManager
     {
-        IDashboardRepository dashboardRepository;
+        private IDashboardRepository dashboardRepository;
+
+        private UnitOfWorkManager uowManager;
+
         public DashboardManager()
         {
-            dashboardRepository = new DashboardRepository_EF();
         }
+
+        public DashboardManager(UnitOfWorkManager uowMgr)
+        {
+            uowManager = uowMgr;
+            dashboardRepository = new DashboardRepository_EF(uowManager.UnitOfWork);
+        }
+
 
         public List<Alert> getActiveAlerts()
         {
+            initNonExistingRepo();
             return dashboardRepository.getActiveAlerts().ToList();
         }
 
         public DataConfig getAlertDataConfig(Alert alert)
         {
+            initNonExistingRepo();
             return alert.DataConfig;
         }
 
         public Gebruiker getAlertGebruiker(Alert alert)
         {
+            initNonExistingRepo();
             return alert.Dashboard.Gebruiker;
         }
 
         public List<Alert> getAllAlerts()
         {
+            initNonExistingRepo();
             return dashboardRepository.getAllAlerts().ToList();
+        }
+
+
+        public void initNonExistingRepo(bool createWithUnitOfWork = false)
+        {
+            if (dashboardRepository == null)
+            {
+                if (createWithUnitOfWork)
+                {
+                    if (uowManager == null)
+                    {
+                        uowManager = new UnitOfWorkManager();
+                    }
+                    dashboardRepository = new DashboardRepository_EF(uowManager.UnitOfWork);
+                }
+                // Als we niet met UoW willen werken, dan maken we een repo aan als die nog niet bestaat.
+                else
+                {
+                    dashboardRepository = new DashboardRepository_EF();
+                }
+
+            }
+
+
+
         }
     }
 }

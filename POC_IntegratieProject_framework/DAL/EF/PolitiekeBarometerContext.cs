@@ -14,10 +14,12 @@ namespace DAL.EF
     {
 
         private readonly bool delaySave;
+
         public PolitiekeBarometerContext(bool unitOfWorkPresent = false) : base("Politieke_BarometerDB")
         {
-            delaySave = unitOfWorkPresent;
             Database.SetInitializer<PolitiekeBarometerContext>(new PolitiekeBarometerInitializer());
+            delaySave = unitOfWorkPresent;
+
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -44,10 +46,10 @@ namespace DAL.EF
         public DbSet<DataConfig> DataConfigs { get; set; }
 
         //Elementen
-        public DbSet<Element> Elementen { get; set; }
         public DbSet<Keyword> Keywords { get; set; }
         public DbSet<Persoon> Personen { get; set; }
         public DbSet<Thema> Themas { get; set; }
+        public DbSet<Organisatie> Organisaties { get; set; }
         //Platformen
         public DbSet<Dashboard> Dashboards { get; set; }
         public DbSet<Gebruiker> Gebruikers { get; set; }

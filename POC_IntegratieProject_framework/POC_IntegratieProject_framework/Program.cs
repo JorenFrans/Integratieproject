@@ -20,7 +20,6 @@ namespace PolitiekeBarometer_CA
         private static IPlatformManager platformManager;
         static void Main(string[] args)
         {
-            Console.WriteLine("Versie Sam");
             elementManager = new ElementManager();
             postManager = new PostManager();
             dashboardManager = new DashboardManager();
@@ -124,7 +123,7 @@ namespace PolitiekeBarometer_CA
                 Console.WriteLine("Alert: " + alert.AlertId);
                 Console.WriteLine("Wanneer " + alert.Waarde + " " + alert.Operator + " " + alert.DataConfig.DataType);
                 Console.WriteLine("Status: " + alert.Status);
-                Element element = elementManager.getElementByNaam(alert.DataConfig.Element.Naam);
+                Element element = elementManager.getElementByNaam(alert.DataConfig.Element.Naam, alert.DataConfig.Element.GetType());
                 Console.WriteLine("Trend: " + postManager.calculateTrend(alert.DataConfig, element));
 
             }
@@ -147,7 +146,6 @@ namespace PolitiekeBarometer_CA
             foreach (Alert alert in actieveAlerts)
             {
                 DataConfig dataConfig = dashboardManager.getAlertDataConfig(alert);
-                Element configElement = elementManager.getElementByNaam(dataConfig.Element.Naam);
                 double waarde = postManager.getHuidigeWaarde(dataConfig);
 
                 switch (alert.Operator)
@@ -176,7 +174,7 @@ namespace PolitiekeBarometer_CA
                     Console.WriteLine("Alert voor " + alert.DataConfig.Element.Naam +
                         " wanneer " + alert.Waarde + " " + alert.Operator + " " + alert.DataConfig.DataType);
                     Console.WriteLine("Status: " + alert.Status);
-                    Element element = elementManager.getElementByNaam(alert.DataConfig.Element.Naam);
+                    Element element = elementManager.getElementByNaam(alert.DataConfig.Element.Naam, dataConfig.Element.GetType());
                     Console.WriteLine("Trend: " + postManager.calculateTrend(alert.DataConfig, element));
                     Console.WriteLine();
                     Gebruiker gebruiker = dashboardManager.getAlertGebruiker(alert);
@@ -221,7 +219,7 @@ namespace PolitiekeBarometer_CA
                     index++;
                 }
 
-                post.Persoon = (Persoon)elementManager.getElementByNaam(tweet.Politician[0] + " " + tweet.Politician[1]);
+                post.Persoon = (Persoon)elementManager.getElementByNaam(tweet.Politician[0] + " " + tweet.Politician[1], typeof(Persoon));
                 post.Source = "Twitter";
                 post.Date = tweet.Date;
                 posts.Add(post);
