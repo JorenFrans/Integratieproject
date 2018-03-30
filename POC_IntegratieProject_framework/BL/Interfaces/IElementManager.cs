@@ -7,7 +7,7 @@ namespace BL.Interfaces
 {
     public interface IElementManager
     {
-        Element getElementByNaam(string naam);
+        Element getElementByNaam(string naam, Type type);
         List<Element> getAllElementen();
     }
 }

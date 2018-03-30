@@ -25,7 +25,7 @@ namespace DAL.Repositories_EF
 
         public IEnumerable<Alert> getAllAlerts()
         {
-            return  context.Alerts.Include(a => a.DataConfig).ToList();
+            return  context.Alerts.Include(a => a.DataConfig.Element).ToList();
         }
 
         public IEnumerable<Alert> getActiveAlerts()

@@ -44,7 +44,10 @@ namespace DAL.Repositories_EF
             }
             else if (element.GetType().Equals(typeof(Thema)))
             {
-                return context.Posts.Where(p => checkKeywords(p, element));
+                Thema thema = context.Themas.Single<Thema>(t => t.Id == element.Id);
+                thema.Keywords = new List<Keyword>();
+                thema.Keywords.AddRange(context.Keywords.Where(kw => kw.Themas.Contains(thema)));
+                return context.Posts.Where(p => checkKeywords(p, thema));
             }
             else return null;
         }
